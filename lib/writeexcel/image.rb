@@ -61,7 +61,7 @@ module Writeexcel
       case filetype
       when 'png'
         process_png(@data)
-      when 'jpg'
+      when 'jpg', 'jpeg'
         process_jpg(@data)
       when 'bmp'
         process_bmp(@data)
@@ -75,7 +75,7 @@ module Writeexcel
     end
 
     def filetype
-      MimeMagic.by_magic(File.open(@filename)).subtype
+      MimeMagic.by_magic(@filename).subtype
     end
 
     # Extract width and height information from a PNG file.
