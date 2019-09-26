@@ -75,7 +75,7 @@ module Writeexcel
     end
 
     def filetype
-      MimeMagic.by_magic(@filename).subtype
+      MimeMagic.by_magic(@data).subtype
     end
 
     # Extract width and height information from a PNG file.
